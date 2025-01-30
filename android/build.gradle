@@ -1,18 +1,23 @@
 allprojects {
     repositories {
-        google()
-        mavenCentral()
+        google()  // For Google's libraries and dependencies
+        mavenCentral()  // For other libraries hosted on Maven Central
     }
 }
 
 rootProject.buildDir = "../build"
+
+// Ensures that the subprojects have their build directories under the root project
 subprojects {
     project.buildDir = "${rootProject.buildDir}/${project.name}"
 }
+
+// Makes sure the subprojects' evaluation depends on the ":app" project
 subprojects {
     project.evaluationDependsOn(":app")
 }
 
+// Registering a clean task to delete the build directory
 tasks.register("clean", Delete) {
     delete rootProject.buildDir
 }
