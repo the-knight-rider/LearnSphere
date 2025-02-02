@@ -34,7 +34,7 @@ class HomeDashboard extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  'Welcome, [Student Name]!',
+                  'Welcome!',
                   style: TextStyle(
                     fontSize: 26,
                     fontWeight: FontWeight.bold,

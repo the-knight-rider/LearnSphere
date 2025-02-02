@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.learnsphere">
     <application
-        android:label="learnsphere"
+        android:label="Learn Sphere"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

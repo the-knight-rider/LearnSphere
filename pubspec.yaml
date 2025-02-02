@@ -1,6 +1,8 @@
 name: learnsphere
 description: "A new Flutter project."
 
+flutter_launcher_name:
+  name: "LearnSphere"
 publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 
 
@@ -28,10 +30,14 @@ dev_dependencies:
     sdk: flutter
 
   flutter_lints: ^5.0.0
-
+  flutter_launcher_icons: ^0.13.1
 flutter:
 
  
   uses-material-design: true
   assets:
     - assets/models/mobilebert.tflite
+flutter_icons:
+  android: true
+  ios: true
+  image_path: "assets/images/icon/app_icon.JPG"
