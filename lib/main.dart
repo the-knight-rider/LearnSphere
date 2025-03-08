@@ -6,6 +6,7 @@ import 'package:learnsphere/screens/register_screen.dart';
 // import 'package:learnsphere/screens/home_screen.dart';
 import 'screens/home_dashboard.dart';
 import 'package:flutter/material.dart';
+
 // import 'package:learnsphere/aihelpers/ai_helper.dart';
 import 'package:learnsphere/aihelpers/ai_helper.dart'; // Ensure this path is correct and AIHelper class is defined in this file
 
