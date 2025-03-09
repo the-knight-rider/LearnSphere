@@ -9,7 +9,7 @@ publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: '>=3.6.1 <4.0.0'
+  sdk: '>=3.1.0 <4.0.0'
 
 dependencies:
   flutter:
@@ -20,18 +20,20 @@ dependencies:
   # tflite_flutter_helper: ^0.5.0  # Optional helper functions for image processing
   
   # Local Database & File Handling
-  sqflite: ^2.3.2
+  sqflite: ^2.3.0
   path_provider: ^2.1.2
   path: ^1.8.3
   flutter_pdfview: ^1.4.0
+  shared_preferences: ^2.5.2  # Required for the PDF viewer
+  fl_chart: ^0.65.0
 
   # UI & Icons
-  cupertino_icons: ^1.0.8
+  cupertino_icons: ^1.0.2
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
-  flutter_lints: ^5.0.0
+  flutter_lints: ^2.0.0
   flutter_launcher_icons: ^0.13.1
 
 flutter:
@@ -39,6 +41,49 @@ flutter:
 
   assets:
     - assets/models/mobilebert.tflite
+    # Add PDF assets from pdf_viewer app
+    - assets/physics_chapter1.pdf
+    - assets/physics_chapter2.pdf
+    - assets/physics_chapter3.pdf
+    - assets/physics_chapter4.pdf
+    - assets/physics_chapter5.pdf
+    - assets/physics_chapter6.pdf
+    - assets/physics_chapter7.pdf
+    - assets/physics_chapter8.pdf
+    - assets/physics_chapter9.pdf
+    - assets/physics_chapter10.pdf
+    - assets/physics_chapter11.pdf
+    - assets/physics_chapter12.pdf
+    - assets/physics_chapter13.pdf
+    - assets/physics_chapter14.pdf
+    # Adding the correct paths for chemistry PDFs
+    - assets/chemestry/
+    - assets/chemestry/chemestry_chapter1.pdf
+    - assets/chemestry/chemestry_chapter2.pdf
+    - assets/chemestry/chemestry_chapter3.pdf
+    - assets/chemestry/chemestry_chapter4.pdf
+    - assets/chemestry/chemestry_chapter5.pdf
+    - assets/chemestry/chemestry_chapter6.pdf
+    - assets/chemestry/chemestry_chapter7.pdf
+    - assets/chemestry/chemestry_chapter8.pdf
+    - assets/chemestry/chemestry_chapter9.pdf
+    - assets/chemestry/chemestry_chapter10.pdf
+    # Adding the correct paths for mathematics PDFs
+    - assets/maths/
+    - assets/maths/maths_chapter1.pdf
+    - assets/maths/maths_chapter2.pdf
+    - assets/maths/maths_chapter3.pdf
+    - assets/maths/maths_chapter4.pdf
+    - assets/maths/maths_chapter5.pdf
+    - assets/maths/maths_chapter6.pdf
+    - assets/maths/maths_chapter7.pdf
+    - assets/maths/maths_chapter8.pdf
+    - assets/maths/maths_chapter9.pdf
+    - assets/maths/maths_chapter10.pdf
+    - assets/maths/maths_chapter11.pdf
+    - assets/maths/maths_chapter12.pdf
+    - assets/maths/maths_chapter13.pdf
+    
 
 flutter_icons:
   android: true

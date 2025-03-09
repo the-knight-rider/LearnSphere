@@ -10,8 +10,6 @@ import 'package:flutter/material.dart';
 // import 'package:learnsphere/aihelpers/ai_helper.dart';
 import 'package:learnsphere/aihelpers/ai_helper.dart'; // Ensure this path is correct and AIHelper class is defined in this file
 
-
-
 // void main() async {
 //   WidgetsFlutterBinding.ensureInitialized();
 //   final aiHelper = AIHelper();
@@ -58,7 +56,16 @@ import 'package:learnsphere/aihelpers/ai_helper.dart'; // Ensure this path is co
 // jjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjjj
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  await DatabaseHelper.instance.database;
+
+  // Initialize database
+  try {
+    print('Initializing database...');
+    final db = await DatabaseHelper.instance.database;
+    print('Database initialized successfully');
+  } catch (e) {
+    print('Error initializing database: $e');
+  }
+
   runApp(MyApp());
 }
 
@@ -69,10 +76,22 @@ class MyApp extends StatelessWidget {
       title: 'AI Offline Education',
       theme: ThemeData(primarySwatch: Colors.blue),
       initialRoute: '/login',
-      routes: {
-        '/login': (context) => LoginScreen(),
-        '/register': (context) => RegisterScreen(),
-        '/home': (context) => HomeDashboard(),
+      onGenerateRoute: (settings) {
+        if (settings.name == '/home') {
+          final String email = settings.arguments as String;
+          return MaterialPageRoute(
+            builder: (context) => HomeDashboard(userEmail: email),
+          );
+        }
+        // Handle other routes
+        switch (settings.name) {
+          case '/login':
+            return MaterialPageRoute(builder: (context) => LoginScreen());
+          case '/register':
+            return MaterialPageRoute(builder: (context) => RegisterScreen());
+          default:
+            return MaterialPageRoute(builder: (context) => LoginScreen());
+        }
       },
     );
   }
